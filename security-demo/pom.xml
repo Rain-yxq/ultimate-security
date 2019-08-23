@@ -17,5 +17,30 @@
             <artifactId>security-browser</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
+
+        <!-- spring-boot的测试框架，可以对http接口编写测试用例 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- maven打包插件，不使用此插件打包的话无法将外部依赖打进jar包。 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.3.3.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <finalName>demo</finalName>
+    </build>
 </project>
