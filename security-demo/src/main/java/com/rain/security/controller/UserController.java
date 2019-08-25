@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonView;
 import com.rain.security.common.exception.UserNotExistException;
 import com.rain.security.entity.dto.User;
 import com.rain.security.entity.dto.UserCondition;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.validation.BindingResult;
@@ -29,7 +32,9 @@ public class UserController {
      */
     @RequestMapping(method = RequestMethod.GET)
     @JsonView(User.UserSimpleView.class) // 在Controller方法上指定视图
-    public List<User> query(@RequestParam(required = false) String userName) {
+    @ApiOperation("获取用户列表")
+    public List<User> query(@RequestParam(required = false) @ApiParam("用户名") String userName) {
+        System.out.println("正在处理UserController.query方法");
         System.out.println(userName);
         List<User> users = new ArrayList<>();
         users.add(new User());

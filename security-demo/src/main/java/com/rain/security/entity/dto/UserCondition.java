@@ -1,12 +1,16 @@
 package com.rain.security.entity.dto;
 
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * 用户的查询条件
  * @author 左边
  * @date 2019/8/24 1:18 AM
  */
 public class UserCondition {
+
     private String userName;
+    @ApiModelProperty("年龄")
     private Integer age;
     private Integer ageTo;
 
