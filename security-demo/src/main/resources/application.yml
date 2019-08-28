@@ -10,3 +10,8 @@ spring:
 security:
   basic:
     enabled: false
+
+#rain:
+#  security:
+#    browser:
+#      loginPage: /demo-signIn.html
